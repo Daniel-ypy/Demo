@@ -3,11 +3,13 @@
     <h3>外观及其他项目检查</h3>
      <el-table
      :data="otherItemsData"
+     :header-cell-style="tableHeaderColor"
     style="width: 100%">
     <el-table-column
         prop="number"
         label="No."
-        width="50">
+        width="50"
+        :header-cell-style="{background:'red'}">
       </el-table-column>
       <el-table-column
         prop="checkItems"
@@ -19,7 +21,11 @@
       </el-table-column>
       <el-table-column
         prop="submissionCycle"
+        align="center"
         label="提交周期">
+        <template slot-scope="scope">
+          <div align-center v-html="getSubmissionCycle(scope.row.submissionCycle)"></div>
+          </template>
       </el-table-column>
       <el-table-column
         prop="risk"
@@ -32,9 +38,10 @@
       <el-table-column
         prop="note"
         label="备注"
+        align="center"
         width="50">
         <template  slot-scope="scope">
-            <label  align-center v-if="scope.row.message ==''"><i  class="pointer el-icon-plus"></i></label>
+            <label   align-center v-if="scope.row.message ==''"><i size="lager" class="pointer el-icon-plus"></i></label>
              <label align-center v-if="scope.row.message !==''"><i class="pointer el-icon-message"></i></label>
           </template>
       </el-table-column>
@@ -121,6 +128,23 @@ export default {
           this.otherItemsData = checkItems.otherItemsData
         }
       }
+    }
+  },
+  methods: {
+    getSubmissionCycle(cycle) {
+      if (cycle === "A") {
+        return "<span style='color:red;'>A</span>"
+      }
+      if (cycle === "B") {
+        return "<span style='color:blue;'>B</span>"
+      }
+      if (cycle === "C") {
+        return "<span style='color:green;'>C</span>"
+      }
+      return "<span >" + cycle + "</span>"
+    },
+    tableHeaderColor({row, column, rowIndex, columnIndex}) {
+      return "background-color:#f5f7fa;color:#9090399;text-align:center"
     }
   }
 }
