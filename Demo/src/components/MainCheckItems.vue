@@ -24,7 +24,7 @@
         width="50">
       </el-table-column>
       <el-table-column >
-        <template slot="header" align-center  slot-scope="scope">
+        <template slot="header" align="center"  slot-scope="scope">
           <label >实际测量模号</label>
           <span class="action-header">
              <i class="pointer el-icon-plus"></i>
@@ -84,6 +84,7 @@
       <el-table-column
           prop="note"
           label="SPC管控项目"
+          align="center"
           width="150">
           <template slot-scope="scope">
               <el-button type="primary" >Chart</el-button>

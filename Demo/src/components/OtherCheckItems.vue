@@ -3,6 +3,7 @@
     <h3>外观及其他项目检查</h3>
      <el-table
      :data="otherItemsData"
+     class="el-table--border"
      :header-cell-style="tableHeaderColor"
     style="width: 100%">
     <el-table-column
@@ -144,12 +145,12 @@ export default {
       return "<span >" + cycle + "</span>"
     },
     tableHeaderColor({row, column, rowIndex, columnIndex}) {
-      return "background-color:#f5f7fa;color:#9090399;text-align:center"
+      return "background-color:#f5f7fa;color:#9090399;text-align:center; "
     }
   }
 }
 </script>
-<style scoped>
+<style scoped> bod
 ::v-deep .el-table__header-wrapper {
   border: 3px solid #000;
   border-radius: 10px;

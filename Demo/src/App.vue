@@ -7,7 +7,7 @@
     <el-card style="margin-top:-12px">
     <div style="display:flex;justify-content: flex-end; align-items:center">
        <span>单据编号</span>
-        <input type="text" style="width:80px;height:26px;" value="IQC-20Y1116-01"/>
+        <input type="text" style="width:80px;height:36px;" value="IQC-20Y1116-01"/>
     </div>
     <el-row class="spacing-10" :gutter="20">
       <el-col :span="10">
@@ -21,13 +21,12 @@
       :value="item.value">
     </el-option>
   </el-select>
-        <!-- <input type="text" style="width:80px" value="22061006.1"/> -->
-         <span style="margin-left:18px">品名</span>
-        <input type="text" style="width:160px;height:26px;" v-model="productName"/>
+         <span style="margin-left:8px">品名</span>
+        <input type="text" style="width:160px;height:36px;" v-model="productName"/>
       </div>
       <div style="margin-top:10px">
         <span style="vertical-align: top;">检查周期基准</span>
-        <div style="display:inline-block ;border: solid 1px #c6c6c6; width: 274px; padding-left:6px">
+        <div style="display:inline-block ;border: solid 1px #c6c6c6; width: 264px; padding-left:6px">
           <div><strong style="color:red;">A</strong> 每批次 | <strong style="color:blue;">B</strong> 1次/三个月(包含<strong style="color:red;">A</strong>)</div>
           <div><strong style="color:green;">C</strong> 1次/半年(包含<strong style="color:red;">A</strong> ，<strong style="color:blue;">B</strong>)</div>
         </div>
@@ -35,24 +34,29 @@
       </el-col>
        <el-col :span="7">
          <el-table
-         style="width:290px"
+         style="width:300px"
+         class="el-table--border"
+          :header-cell-style="tableHeaderColor"
       :data="tableData"
-      :row-style="{height:'10px'}">
+      >
       <el-table-column
         prop="batchNumber"
         label="纳品批号"
-        width="130">
+        align="center"
+        min-width="80">
       </el-table-column>
       <el-table-column
         prop="quantity"
         label="纳品数(EA)"
-        width="130">
+        align="center"
+        min-width="80">
       </el-table-column>
       <el-table-column
         prop="action"
+        align="center"
         width="40">
         <template slot-scope="scope">
-              <i class="pointer el-icon-share"></i>
+              <i class="pointer el-icon-minus"></i>
             </template>
         <template slot="header"  slot-scope="scope">
              <i class="pointer el-icon-plus"></i>
@@ -62,23 +66,25 @@
       </el-col>
        <el-col :span="7">
         <el-table
-          style="width:300px;float:right;"
+          style="min-width:200px;float:right;"
+          class="el-table--border"
+          :header-cell-style="tableHeaderColor"
           :data="editHistoryData"
       :row-style="{height: '20px'}">
       <el-table-column
         prop="qc"
         label="检查"
-        width="100">
+        align="center">
       </el-table-column>
         <el-table-column
         prop="review"
-        label="检讨"
-        width="100">
+         align="center"
+        label="检讨">
         </el-table-column>
         <el-table-column
         prop="confirm"
-        label="承认"
-        width="100">
+         align="center"
+        label="承认">
         </el-table-column>
         </el-table>
       </el-col>
@@ -150,6 +156,9 @@ export default {
       // this.productName = products[0].productName;
       this.product = products.label
       this.productName = products.productName
+    },
+    tableHeaderColor({row, column, rowIndex, columnIndex}) {
+      return "background-color:#f5f7fa;color:#9090399;text-align:center; "
     }
   }
 }
