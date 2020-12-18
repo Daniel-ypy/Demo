@@ -9,7 +9,8 @@
     <el-table-column
         prop="number"
         label="No."
-        width="50"
+        align="center"
+        width="60"
         :header-cell-style="{background:'red'}">
       </el-table-column>
       <el-table-column
@@ -18,6 +19,7 @@
       </el-table-column>
       <el-table-column
         prop="checkMethod"
+        align="center"
         label="检查方法">
       </el-table-column>
       <el-table-column
@@ -30,20 +32,22 @@
       </el-table-column>
       <el-table-column
         prop="risk"
+         align="center"
         label="风险度">
       </el-table-column>
       <el-table-column
         prop="judgment"
+        align="center"
         label="判定">
       </el-table-column>
       <el-table-column
         prop="note"
         label="备注"
         align="center"
-        width="50">
+        width="60">
         <template  slot-scope="scope">
-            <label   align-center v-if="scope.row.message ==''"><i size="lager" class="pointer el-icon-plus"></i></label>
-             <label align-center v-if="scope.row.message !==''"><i class="pointer el-icon-message"></i></label>
+            <label style="font-size:200%"  align-center v-if="scope.row.message ==''"><i size="lager" class="pointer el-icon-plus"></i></label>
+             <label style="font-size:200%"  align-center v-if="scope.row.message !==''"><i class="pointer el-icon-message"></i></label>
           </template>
       </el-table-column>
      </el-table>

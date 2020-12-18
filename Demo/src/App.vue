@@ -56,10 +56,14 @@
         align="center"
         width="40">
         <template slot-scope="scope">
+          <div style="font-size:150%">
               <i class="pointer el-icon-minus"></i>
+              </div>
             </template>
         <template slot="header"  slot-scope="scope">
+          <div style="font-size:150%">
              <i class="pointer el-icon-plus"></i>
+          </div>
             </template>
       </el-table-column>
     </el-table>

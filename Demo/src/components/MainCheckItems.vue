@@ -2,11 +2,13 @@
 <div>
     <el-table
      :data="mainItemsData"
+     :header-cell-style="tableHeaderColor"
     style="width: 100%">
       <el-table-column
         prop="location"
         label="位置"
-        width="50">
+        align="center"
+        width="60">
       </el-table-column>
       <el-table-column
         prop="specification"
@@ -16,12 +18,17 @@
       <el-table-column
         prop="methodAndTool"
         label="检查方法及工具"
-        width="100">
+        align="center"
+        width="90">
       </el-table-column>
       <el-table-column
         prop="period"
         label="检查周期"
+        align="center"
         width="50">
+        <template slot-scope="scope">
+          <div align-center v-html="getSubmissionCycle(scope.row.period)"></div>
+          </template>
       </el-table-column>
       <el-table-column >
         <template slot="header" align="center"  slot-scope="scope">
@@ -52,32 +59,22 @@
           prop="item5"
           label="">
           </el-table-column>
-          <el-table-column
-          prop="item6"
-          label="">
-          </el-table-column>
-          <el-table-column
-          prop="item7"
-          label="">
-          </el-table-column>
-          <el-table-column
-          prop="item8"
-          label="">
-          </el-table-column>
       </el-table-column>
       <el-table-column label="判定结果">
          <el-table-column
           prop="result"
           label="结果"
-          width="50">
+          align="center"
+          width="90">
           </el-table-column>
           <el-table-column
           prop="note"
           label="备注"
-          width="50">
+          align="center"
+          width="60">
            <template  slot-scope="scope">
-            <label  align-center v-if="scope.row.message ==''"><i  class="pointer el-icon-plus"></i></label>
-             <label align-center v-if="scope.row.message !==''"><i class="pointer el-icon-message"></i></label>
+            <label style="font-size:200%" align-center ><i v-if="scope.row.message ==''" class="pointer el-icon-plus"></i></label>
+             <label style="font-size:200%" align-center v-if="scope.row.message !==''"><i size="50" class="pointer el-icon-message"></i></label>
           </template>
           </el-table-column>
       </el-table-column>
@@ -85,7 +82,7 @@
           prop="note"
           label="SPC管控项目"
           align="center"
-          width="150">
+          width="110">
           <template slot-scope="scope">
               <el-button type="primary" >Chart</el-button>
             </template>
@@ -157,6 +154,23 @@ export default {
         }
       }
     }
+  },
+  methods: {
+    getSubmissionCycle(cycle) {
+      if (cycle === "A") {
+        return "<span style='color:red;'>A</span>"
+      }
+      if (cycle === "B") {
+        return "<span style='color:blue;'>B</span>"
+      }
+      if (cycle === "C") {
+        return "<span style='color:green;'>C</span>"
+      }
+      return "<span >" + cycle + "</span>"
+    },
+    tableHeaderColor({row, column, rowIndex, columnIndex}) {
+      return "background-color:#f5f7fa;color:#9090399;text-align:center; "
+    }
   }
 }
 </script>
@@ -168,6 +182,7 @@ export default {
 }
 .action-header i {
     margin-left: 6px;
+    font-size: 150%;
 }
 .pointer{
   cursor: pointer !important;
