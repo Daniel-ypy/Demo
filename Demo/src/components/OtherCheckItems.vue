@@ -34,6 +34,19 @@
         prop="risk"
          align="center"
         label="风险度">
+        <template slot-scope="scope">
+          <el-dropdown>
+  <span class="el-dropdown-link" v-html="getRiskMenuContent(scope.row.risk)">
+  </span>
+  <el-dropdown-menu slot="dropdown">
+    <el-dropdown-item>无异常</el-dropdown-item>
+    <el-dropdown-item  style="color:orange">警戒</el-dropdown-item>
+    <el-dropdown-item style="color:red">危险</el-dropdown-item>
+    <el-dropdown-item >合格</el-dropdown-item>
+  </el-dropdown-menu>
+</el-dropdown>
+
+        </template>
       </el-table-column>
       <el-table-column
         prop="judgment"
@@ -219,6 +232,15 @@ export default {
       } else {
         return "<i size=\"50\" class=\"pointer el-icon-message\"></i>"
       }
+    },
+    getRiskMenuContent(risk) {
+      if (risk === "警戒") {
+        return "<span style=\"color:orange\">" + risk + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
+      }
+      if (risk === "危险") {
+        return "<span style=\"color:red\">" + risk + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
+      }
+      return "<span >" + risk + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
     }
   }
 }
