@@ -246,18 +246,18 @@ export default {
     },
     getRiskMenuContent(risk) {
       if (risk === "警戒") {
-        return "<span style=\"color:orange\">" + risk + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
+        return "<span style=\"color:orange\">" + risk + "</span><i class=\"pointer el-icon-caret-bottom el-icon--right\"></i>"
       }
       if (risk === "危险") {
-        return "<span style=\"color:red\">" + risk + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
+        return "<span style=\"color:red\">" + risk + "</span><i class=\"pointer  el-icon-caret-bottom el-icon--right\"></i>"
       }
-      return "<span >" + risk + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
+      return "<span >" + risk + "</span><i class=\"pointer  el-icon-caret-bottom el-icon--right\"></i>"
     },
     getResultMenuContent(result) {
       if (result === "不合格") {
-        return "<span style=\"color:red\">" + result + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
+        return "<span style=\"color:red\">" + result + "</span><i class=\"pointer  el-icon-caret-bottom el-icon--right\"></i>"
       }
-      return "<span >" + result + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
+      return "<span >" + result + "</span><i class=\" pointer el-icon-caret-bottom el-icon--right\"></i>"
     },
     viewNote(message) {
       if (message === "") {
