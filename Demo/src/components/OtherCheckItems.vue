@@ -1,6 +1,6 @@
 <template>
 <div>
-    <h3>外观及其他项目检查</h3>
+    <h5>外观及其他项目检查</h5>
      <el-table
      :data="otherItemsData"
      class="el-table--border"

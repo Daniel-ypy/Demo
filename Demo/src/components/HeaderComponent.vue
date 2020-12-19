@@ -1,12 +1,14 @@
 <template>
    <el-row align-center class="header">
-    <el-dropdown split-button type="primary" >
-  File
+    <el-dropdown>
+  <el-button style="padding:10px 20px" type="primary">
+    File<i class="el-icon-arrow-down el-icon--right"></i>
+  </el-button>
   <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item ><el-button type="primary" icon="el-icon-document">新建</el-button></el-dropdown-item>
-    <el-dropdown-item ><el-button   type="primary" icon="el-icon-printer">打印</el-button></el-dropdown-item>
-    <el-dropdown-item><el-button   type="primary" icon="el-icon-document-copy">PDF</el-button></el-dropdown-item>
-    <el-dropdown-item><el-button   type="primary" icon="el-icon-document-checked">另存为</el-button></el-dropdown-item>
+    <el-dropdown-item>新建</el-dropdown-item>
+    <el-dropdown-item>打印</el-dropdown-item>
+    <el-dropdown-item>PDF</el-dropdown-item>
+    <el-dropdown-item>另存为</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
     <el-button size="medium">View</el-button>
