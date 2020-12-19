@@ -79,8 +79,9 @@
           align="center"
           width="60">
            <template  slot-scope="scope">
-            <label style="font-size:200%" align-center ><i v-if="scope.row.message ==''" class="pointer el-icon-plus"></i></label>
-             <label style="font-size:200%" align-center v-if="scope.row.message !==''"><i size="50" class="pointer el-icon-message"></i></label>
+             <label style="font-size:150%" align-center v-html="getNoteContent(scope.row.note)"></label>
+            <!-- <label style="font-size:200%" align-center ><i v-if="scope.row.message ==''" class="pointer el-icon-plus"></i></label>
+             <label style="font-size:200%" align-center v-if="scope.row.message !==''"><i size="50" class="pointer el-icon-message"></i></label> -->
           </template>
           </el-table-column>
       </el-table-column>
@@ -138,6 +139,36 @@ export default {
             result: "合格",
             note: {
               message: "",
+              isRead: false
+            }
+          },
+          {
+            location: 3,
+            specification: "12.70+0.0/-0.10",
+            methodAndTool: "千分尺",
+            period: "A",
+            item1: "12.635",
+            item2: "12.641",
+            item3: "18.065",
+            item4: "12.637",
+            result: "合格",
+            note: {
+              message: "test",
+              isRead: true
+            }
+          },
+          {
+            location: 3,
+            specification: "12.70+0.0/-0.10",
+            methodAndTool: "千分尺",
+            period: "A",
+            item1: "12.635",
+            item2: "12.641",
+            item3: "18.065",
+            item4: "12.637",
+            result: "合格",
+            note: {
+              message: "test1",
               isRead: false
             }
           }
@@ -199,7 +230,17 @@ export default {
       if (item === "3.50T/3.58Z") {
         return "<span style='color:red;'>不合格</span>"
       }
-      return "<span style='color:blue;'>不合格</span>"
+      return "<span style='color:blue;'>合格</span>"
+    },
+    getNoteContent(note) {
+      if (note.message === "") {
+        return "<i size=\"50\" class=\"pointer el-icon-plus\"></i>"
+      }
+      if (note.isRead) {
+        return "<i size=\"50\" style=\"color:red\" class=\"pointer el-icon-message\"></i>"
+      } else {
+        return "<i size=\"50\" class=\"pointer el-icon-message\"></i>"
+      }
     },
     tableHeaderColor({row, column, rowIndex, columnIndex}) {
       return "background-color:#f5f7fa;color:#9090399;text-align:center; "
