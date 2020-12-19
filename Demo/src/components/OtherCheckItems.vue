@@ -70,7 +70,7 @@
         align="center"
         width="60">
        <template  slot-scope="scope">
-             <label style="font-size:150%" align-center v-html="getNoteContent(scope.row.note)"></label>
+             <label @click="viewNote(scope.row.note.message)" style="font-size:150%" align-center v-html="getNoteContent(scope.row.note)"></label>
           </template>
       </el-table-column>
      </el-table>
@@ -239,7 +239,7 @@ export default {
         return "<i size=\"50\" class=\"pointer el-icon-plus\"></i>"
       }
       if (note.isRead) {
-        return "<i size=\"50\" style=\"color:red\" class=\"pointer el-icon-message\"></i>"
+        return "<i size=\"50\" style=\"color:red\"  class=\"pointer el-icon-message\"></i>"
       } else {
         return "<i size=\"50\" class=\"pointer el-icon-message\"></i>"
       }
@@ -258,6 +258,20 @@ export default {
         return "<span style=\"color:red\">" + result + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
       }
       return "<span >" + result + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
+    },
+    viewNote(message) {
+      if (message === "") {
+        return
+      }
+      this.$alert("这是备注信息", "备注", {
+        confirmButtonText: "确定",
+        callback: action => {
+          this.$message({
+            type: "info",
+            message: `action: ${action}`
+          })
+        }
+      })
     }
   }
 }
