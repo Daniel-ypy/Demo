@@ -56,12 +56,12 @@
         align="center"
         width="40">
         <template slot-scope="scope">
-          <div style="font-size:150%">
+          <div @click="removeBatch(scope.row)" style="font-size:150%">
               <i class="pointer el-icon-minus"></i>
               </div>
             </template>
         <template slot="header"  slot-scope="scope">
-          <div style="font-size:150%">
+          <div  @click="isAddBatch=true;" style="font-size:150%">
              <i class="pointer el-icon-plus"></i>
           </div>
             </template>
@@ -102,6 +102,21 @@
     </el-row>
   </el-main>
    <router-view />
+   <el-dialog width="350px" title="添加纳品批次" :visible.sync="isAddBatch">
+  <el-form :model="form">
+    <el-form-item label="纳品批号" :label-width="formLabelWidth">
+      <el-input v-model="form.name" autocomplete="off"></el-input>
+    </el-form-item>
+    <el-form-item label="纳品数" :label-width="formLabelWidth">
+     <el-input v-model="form.count" autocomplete="off"></el-input>
+    </el-form-item>
+  </el-form>
+  <div slot="footer" class="dialog-footer">
+    <el-button @click="isAddBatch = false">取 消</el-button>
+    <el-button type="primary" @click="addBatch()">确 定</el-button>
+  </div>
+</el-dialog>
+
 </el-container>
 </template>
 
@@ -119,13 +134,22 @@ export default {
   },
   data () {
     return {
+      isAddBatch: false,
+      formLabelWidth: "80px",
+      currentBatch: {},
+      form: {
+        name: "",
+        count: ""
+      },
       tableData: [
         {
+          id: 1,
           batchNumber: "2020.11.10",
           quantity: "1500",
           action: "-"
         },
         {
+          id: 2,
           batchNumber: "2020.11.10",
           quantity: "1500",
           action: "-"
@@ -163,6 +187,23 @@ export default {
     },
     tableHeaderColor({row, column, rowIndex, columnIndex}) {
       return "background-color:#f5f7fa;color:#9090399;text-align:center; "
+    },
+    addBatch() {
+      this.tableData.push({
+        id: this.tableData.length + 1 || 1,
+        batchNumber: this.form.name,
+        quantity: this.form.count,
+        action: "-"
+      })
+      this.isAddBatch = false
+    },
+    removeBatch(batch) {
+      this.currentBatch = batch
+      this.$confirm("确认删除？")
+        .then(_ => {
+          this.tableData.splice(this.tableData.findIndex(item => item.id === batch.id), 1)
+        })
+        .catch(_ => {})
     }
   }
 }
