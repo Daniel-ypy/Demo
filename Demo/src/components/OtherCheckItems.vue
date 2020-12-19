@@ -52,6 +52,17 @@
         prop="judgment"
         align="center"
         label="判定">
+        <template slot-scope="scope">
+          <el-dropdown>
+          <span class="el-dropdown-link" v-html="getResultMenuContent(scope.row.judgment)">
+          </span>
+          <el-dropdown-menu slot="dropdown">
+            <el-dropdown-item>合格</el-dropdown-item>
+            <el-dropdown-item  style="color:red">不合格</el-dropdown-item>
+          </el-dropdown-menu>
+        </el-dropdown>
+
+        </template>
       </el-table-column>
       <el-table-column
         prop="note"
@@ -241,6 +252,12 @@ export default {
         return "<span style=\"color:red\">" + risk + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
       }
       return "<span >" + risk + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
+    },
+    getResultMenuContent(result) {
+      if (result === "不合格") {
+        return "<span style=\"color:red\">" + result + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
+      }
+      return "<span >" + result + "</span><i class=\"el-icon-caret-bottom el-icon--right\"></i>"
     }
   }
 }
