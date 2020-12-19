@@ -45,9 +45,8 @@
         label="备注"
         align="center"
         width="60">
-        <template  slot-scope="scope">
-            <label style="font-size:200%"  align-center v-if="scope.row.message ==''"><i size="lager" class="pointer el-icon-plus"></i></label>
-             <label style="font-size:200%"  align-center v-if="scope.row.message !==''"><i class="pointer el-icon-message"></i></label>
+       <template  slot-scope="scope">
+             <label style="font-size:150%" align-center v-html="getNoteContent(scope.row.note)"></label>
           </template>
       </el-table-column>
      </el-table>
@@ -125,8 +124,8 @@ export default {
               risk: "无异常",
               judgment: "合格",
               note: {
-                message: "",
-                isRead: false
+                message: "test",
+                isRead: true
               }
             },
             {
@@ -137,7 +136,7 @@ export default {
               risk: "警戒",
               judgment: "合格",
               note: {
-                message: "",
+                message: "test",
                 isRead: false
               }
             },
@@ -149,7 +148,7 @@ export default {
               risk: "危险",
               judgment: "不合格",
               note: {
-                message: "",
+                message: "test",
                 isRead: false
               }
             },
@@ -161,8 +160,8 @@ export default {
               risk: "合格",
               judgment: "合格",
               note: {
-                message: "",
-                isRead: false
+                message: "test",
+                isRead: true
               }
             },
             {
@@ -173,7 +172,7 @@ export default {
               risk: "合格",
               judgment: "合格",
               note: {
-                message: "",
+                message: "test",
                 isRead: false
               }
             }
@@ -210,6 +209,16 @@ export default {
     },
     tableHeaderColor({row, column, rowIndex, columnIndex}) {
       return "background-color:#f5f7fa;color:#9090399;text-align:center; "
+    },
+    getNoteContent(note) {
+      if (note.message === "") {
+        return "<i size=\"50\" class=\"pointer el-icon-plus\"></i>"
+      }
+      if (note.isRead) {
+        return "<i size=\"50\" style=\"color:red\" class=\"pointer el-icon-message\"></i>"
+      } else {
+        return "<i size=\"50\" class=\"pointer el-icon-message\"></i>"
+      }
     }
   }
 }

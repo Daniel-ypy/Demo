@@ -60,6 +60,13 @@
           </el-table-column>
           <el-table-column
           prop="item5"
+          label="5">
+          <template slot-scope="scope">
+            <el-input v-model="scope.row.item5"/>
+          </template>
+          </el-table-column>
+          <el-table-column
+          prop="item5"
           label="">
           </el-table-column>
       </el-table-column>
@@ -80,8 +87,6 @@
           width="60">
            <template  slot-scope="scope">
              <label style="font-size:150%" align-center v-html="getNoteContent(scope.row.note)"></label>
-            <!-- <label style="font-size:200%" align-center ><i v-if="scope.row.message ==''" class="pointer el-icon-plus"></i></label>
-             <label style="font-size:200%" align-center v-if="scope.row.message !==''"><i size="50" class="pointer el-icon-message"></i></label> -->
           </template>
           </el-table-column>
       </el-table-column>
