@@ -54,6 +54,9 @@
           <el-table-column
           prop="item4"
           label="4">
+          <template slot-scope="scope">
+             <div align-center v-html="getItem4Content(scope.row.item4)"></div>
+          </template>
           </el-table-column>
           <el-table-column
           prop="item5"
@@ -66,6 +69,9 @@
           label="结果"
           align="center"
           width="90">
+          <template slot-scope="scope">
+             <div align-center v-html="getMainResultContent(scope.row.item4)"></div>
+          </template>
           </el-table-column>
           <el-table-column
           prop="note"
@@ -84,7 +90,7 @@
           align="center"
           width="110">
           <template slot-scope="scope">
-              <el-button type="primary" >Chart</el-button>
+              <el-button size="small" type="primary" >Chart</el-button>
             </template>
           </el-table-column>
     </el-table>
@@ -110,10 +116,25 @@ export default {
             specification: "Ø3.50+0.03/-0.0",
             methodAndTool: "针规",
             period: "A",
-            item1: "3.50T\n3.53Z",
-            item2: "3.50T\n3.53Z",
-            item3: "3.50T\n3.53Z",
-            item4: "3.50T\n3.53Z",
+            item1: "3.50T/3.53Z",
+            item2: "3.50T/n3.53Z",
+            item3: "3.50T/3.53Z",
+            item4: "3.50T/3.58Z",
+            result: "合格",
+            note: {
+              message: "",
+              isRead: false
+            }
+          },
+          {
+            location: 2,
+            specification: "12.70+0.0/-0.10",
+            methodAndTool: "千分尺",
+            period: "A",
+            item1: "12.635",
+            item2: "12.641",
+            item3: "18.065",
+            item4: "12.637",
             result: "合格",
             note: {
               message: "",
@@ -167,6 +188,18 @@ export default {
         return "<span style='color:green;'>C</span>"
       }
       return "<span >" + cycle + "</span>"
+    },
+    getItem4Content(item) {
+      if (item === "3.50T/3.58Z") {
+        return "<span style='color:red;'>" + item + "</span>"
+      }
+      return "<span >" + item + "</span>"
+    },
+    getMainResultContent(item) {
+      if (item === "3.50T/3.58Z") {
+        return "<span style='color:red;'>不合格</span>"
+      }
+      return "<span style='color:blue;'>不合格</span>"
     },
     tableHeaderColor({row, column, rowIndex, columnIndex}) {
       return "background-color:#f5f7fa;color:#9090399;text-align:center; "

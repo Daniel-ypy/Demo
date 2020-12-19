@@ -83,7 +83,7 @@ export default {
             },
             {
               number: 1,
-              checkItems: "不可有压痕",
+              checkItems: "不可有杂质",
               checkMethod: "显微镜",
               submissionCycle: "A",
               risk: "警戒",
@@ -95,7 +95,7 @@ export default {
             },
             {
               number: 1,
-              checkItems: "不可有压痕",
+              checkItems: "不可有油污",
               checkMethod: "显微镜",
               submissionCycle: "B",
               risk: "危险",
@@ -107,8 +107,68 @@ export default {
             },
             {
               number: 1,
+              checkItems: "不可有尖锐的角",
+              checkMethod: "显微镜",
+              submissionCycle: "C",
+              risk: "合格",
+              judgment: "合格",
+              note: {
+                message: "",
+                isRead: false
+              }
+            },
+            {
+              number: 1,
               checkItems: "不可有压痕",
               checkMethod: "显微镜",
+              submissionCycle: "-",
+              risk: "无异常",
+              judgment: "合格",
+              note: {
+                message: "",
+                isRead: false
+              }
+            },
+            {
+              number: 1,
+              checkItems: "批锋情况",
+              checkMethod: "目视",
+              submissionCycle: "A",
+              risk: "警戒",
+              judgment: "合格",
+              note: {
+                message: "",
+                isRead: false
+              }
+            },
+            {
+              number: 1,
+              checkItems: "包装箱完好，不可有油污",
+              checkMethod: "目视",
+              submissionCycle: "B",
+              risk: "危险",
+              judgment: "不合格",
+              note: {
+                message: "",
+                isRead: false
+              }
+            },
+            {
+              number: 1,
+              checkItems: "穴号确认：1#，2#，3#，4#",
+              checkMethod: "目视",
+              submissionCycle: "C",
+              risk: "合格",
+              judgment: "合格",
+              note: {
+                message: "",
+                isRead: false
+              }
+            },
+            {
+              number: 1,
+              checkItems: "供应商检查成绩书",
+              checkMethod: "目视",
               submissionCycle: "C",
               risk: "合格",
               judgment: "合格",
