@@ -5,10 +5,10 @@
     File<i class="el-icon-arrow-down el-icon--right"></i>
   </el-button>
   <el-dropdown-menu slot="dropdown">
-    <el-dropdown-item>新建</el-dropdown-item>
-    <el-dropdown-item>打印</el-dropdown-item>
-    <el-dropdown-item>PDF</el-dropdown-item>
-    <el-dropdown-item>另存为</el-dropdown-item>
+    <el-dropdown-item icon="el-icon-plus">新建</el-dropdown-item>
+    <el-dropdown-item icon="el-icon-printer">打印</el-dropdown-item>
+    <el-dropdown-item icon="el-icon-tickets">PDF</el-dropdown-item>
+    <el-dropdown-item icon="el-icon-document">另存为</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
     <el-button size="medium">View</el-button>
