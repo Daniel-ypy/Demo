@@ -1,5 +1,12 @@
 <template>
 <div>
+  <el-dialog title="检测曲线图" :visible.sync="showChat">
+  <img src="https://www.bio-equip.com/imgatl/2016/2016070758144440.jpg"/>
+  <div slot="footer" class="dialog-footer">
+    <el-button @click="showChat = false">取 消</el-button>
+    <el-button type="primary" @click="showChat = false">确 定</el-button>
+  </div>
+</el-dialog>
     <el-table
      :data="mainItemsData"
      :header-cell-style="tableHeaderColor"
@@ -96,7 +103,7 @@
           align="center"
           width="110">
           <template slot-scope="scope">
-              <el-button size="small" type="primary" >Chart</el-button>
+              <el-button @click="viewChat()" size="small" type="primary" >Chart</el-button>
             </template>
           </el-table-column>
     </el-table>
@@ -113,6 +120,7 @@ export default {
   name: "MainCheckItem",
   data () {
     return {
+      showChat: false,
       mainItemsData: [],
       products: [{
         productName: "22061006.1",
@@ -263,6 +271,9 @@ export default {
           })
         }
       })
+    },
+    viewChat() {
+      this.showChat = true
     }
   }
 }
