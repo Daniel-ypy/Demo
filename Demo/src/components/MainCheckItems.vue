@@ -57,6 +57,9 @@
           <el-table-column
           prop="item3"
           label="3">
+          <template slot-scope="scope">
+             <div align-center v-html="getItem3Content(scope.row.item3)"></div>
+          </template>
           </el-table-column>
           <el-table-column
           prop="item4"
@@ -84,7 +87,7 @@
           align="center"
           width="90">
           <template slot-scope="scope">
-             <div align-center v-html="getMainResultContent(scope.row.item4)"></div>
+             <div align-center v-html="getMainResultContent(scope.row)"></div>
           </template>
           </el-table-column>
           <el-table-column
@@ -204,6 +207,36 @@ export default {
               message: "1",
               isRead: false
             }
+          },
+          {
+            location: 2,
+            specification: "12.70+0.0/-0.10",
+            methodAndTool: "千分尺",
+            period: "A",
+            item1: "12.635",
+            item2: "12.641",
+            item3: "18.065",
+            item4: "12.637",
+            result: "合格",
+            note: {
+              message: "",
+              isRead: false
+            }
+          },
+          {
+            location: 3,
+            specification: "12.70+0.0/-0.10",
+            methodAndTool: "千分尺",
+            period: "A",
+            item1: "12.635",
+            item2: "12.641",
+            item3: "18.069",
+            item4: "12.637",
+            result: "合格",
+            note: {
+              message: "test1",
+              isRead: false
+            }
           }
         ]
       }
@@ -233,6 +266,12 @@ export default {
       }
       return "<span >" + cycle + "</span>"
     },
+    getItem3Content(item) {
+      if (item === "18.069") {
+        return "<span style='color:red;'>" + item + "</span>"
+      }
+      return "<span >" + item + "</span>"
+    },
     getItem4Content(item) {
       if (item === "3.50T/3.58Z") {
         return "<span style='color:red;'>" + item + "</span>"
@@ -240,7 +279,10 @@ export default {
       return "<span >" + item + "</span>"
     },
     getMainResultContent(item) {
-      if (item === "3.50T/3.58Z") {
+      if (item == null || item === undefined) {
+        return
+      }
+      if (item.item4 === "3.50T/3.58Z" || item.item3 === "18.069") {
         return "<span style='color:red;'>不合格</span>"
       }
       return "<span style='color:blue;'>合格</span>"

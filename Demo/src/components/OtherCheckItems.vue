@@ -203,7 +203,105 @@ export default {
           ]
         },
         {
-          productName: "22061006.2"
+          productName: "22061006.2",
+          otherItemsData: [
+            {
+              number: 1,
+              checkItems: "不可有压痕",
+              checkMethod: "显微镜",
+              submissionCycle: "-",
+              risk: "无异常",
+              judgment: "合格",
+              note: {
+                message: "",
+                isRead: false
+              }
+            },
+            {
+              number: 2,
+              checkItems: "不可有杂质",
+              checkMethod: "显微镜",
+              submissionCycle: "A",
+              risk: "警戒",
+              judgment: "合格",
+              note: {
+                message: "",
+                isRead: false
+              }
+            },
+            {
+              number: 3,
+              checkItems: "不可有油污",
+              checkMethod: "显微镜",
+              submissionCycle: "B",
+              risk: "危险",
+              judgment: "不合格",
+              note: {
+                message: "",
+                isRead: false
+              }
+            },
+            {
+              number: 4,
+              checkItems: "不可有尖锐的角",
+              checkMethod: "显微镜",
+              submissionCycle: "C",
+              risk: "合格",
+              judgment: "合格",
+              note: {
+                message: "",
+                isRead: false
+              }
+            },
+            {
+              number: 5,
+              checkItems: "不可有压痕",
+              checkMethod: "显微镜",
+              submissionCycle: "-",
+              risk: "无异常",
+              judgment: "合格",
+              note: {
+                message: "test",
+                isRead: true
+              }
+            },
+            {
+              number: 6,
+              checkItems: "批锋情况",
+              checkMethod: "目视",
+              submissionCycle: "A",
+              risk: "警戒",
+              judgment: "合格",
+              note: {
+                message: "test",
+                isRead: false
+              }
+            },
+            {
+              number: 7,
+              checkItems: "包装箱完好，不可有油污",
+              checkMethod: "目视",
+              submissionCycle: "B",
+              risk: "危险",
+              judgment: "不合格",
+              note: {
+                message: "test",
+                isRead: false
+              }
+            },
+            {
+              number: 8,
+              checkItems: "穴号确认：1#，2#，3#，4#",
+              checkMethod: "目视",
+              submissionCycle: "C",
+              risk: "合格",
+              judgment: "合格",
+              note: {
+                message: "test",
+                isRead: true
+              }
+            }
+          ]
         }
       ]
     }
