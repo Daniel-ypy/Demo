@@ -1,7 +1,7 @@
 <template>
    <el-row align-center class="header">
     <el-dropdown>
-  <el-button style="padding:10px 20px" type="primary">
+  <el-button size="medium" type="primary">
     File<i class="el-icon-arrow-down el-icon--right"></i>
   </el-button>
   <el-dropdown-menu slot="dropdown">
