@@ -105,7 +105,7 @@ export default {
               }
             },
             {
-              number: 1,
+              number: 2,
               checkItems: "不可有杂质",
               checkMethod: "显微镜",
               submissionCycle: "A",
@@ -117,7 +117,7 @@ export default {
               }
             },
             {
-              number: 1,
+              number: 3,
               checkItems: "不可有油污",
               checkMethod: "显微镜",
               submissionCycle: "B",
@@ -129,7 +129,7 @@ export default {
               }
             },
             {
-              number: 1,
+              number: 4,
               checkItems: "不可有尖锐的角",
               checkMethod: "显微镜",
               submissionCycle: "C",
@@ -141,7 +141,7 @@ export default {
               }
             },
             {
-              number: 1,
+              number: 5,
               checkItems: "不可有压痕",
               checkMethod: "显微镜",
               submissionCycle: "-",
@@ -153,7 +153,7 @@ export default {
               }
             },
             {
-              number: 1,
+              number: 6,
               checkItems: "批锋情况",
               checkMethod: "目视",
               submissionCycle: "A",
@@ -165,7 +165,7 @@ export default {
               }
             },
             {
-              number: 1,
+              number: 7,
               checkItems: "包装箱完好，不可有油污",
               checkMethod: "目视",
               submissionCycle: "B",
@@ -177,7 +177,7 @@ export default {
               }
             },
             {
-              number: 1,
+              number: 8,
               checkItems: "穴号确认：1#，2#，3#，4#",
               checkMethod: "目视",
               submissionCycle: "C",
@@ -189,7 +189,7 @@ export default {
               }
             },
             {
-              number: 1,
+              number: 9,
               checkItems: "供应商检查成绩书",
               checkMethod: "目视",
               submissionCycle: "C",

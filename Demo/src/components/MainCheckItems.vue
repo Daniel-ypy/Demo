@@ -171,7 +171,7 @@ export default {
             }
           },
           {
-            location: 3,
+            location: 4,
             specification: "12.70+0.0/-0.10",
             methodAndTool: "千分尺",
             period: "A",
