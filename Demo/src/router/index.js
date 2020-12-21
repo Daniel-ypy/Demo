@@ -1,14 +1,31 @@
 import Vue from "vue"
-import Router from "vue-router"
+import VueRouter from "vue-router"
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-export default new Router({
-  routes: [
-    // {
-    //   path: "/",
-    //   name: "HelloWorld",
-    //   component: HelloWorld
-    // }
-  ]
+const routes = [
+  {
+    path: "/chat",
+    name: "chat",
+    component: () =>
+    import(/* webpackChunkName: "about" */ "../views/chat.vue")
+  },
+  {
+    path: "/home",
+    name: "home",
+    component: () =>
+    import(/* webpackChunkName: "about" */ "../views/home.vue")
+  },
+  {
+    path: "/",
+    redirect: "/home"
+  }
+]
+
+const router = new VueRouter({
+  mode: "history",
+  base: process.env.BASE_URL,
+  routes
 })
+
+export default router

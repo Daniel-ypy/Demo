@@ -315,7 +315,7 @@ export default {
       })
     },
     viewChat() {
-      this.showChat = true
+      this.$router.push("/chat")
     }
   }
 }
