@@ -7,7 +7,7 @@
     <el-card style="margin-top:-12px">
     <div style="display:flex;justify-content: flex-end; align-items:center">
        <span>单据编号</span>
-        <input type="text" style="width:80px;height:30px;" value="IQC-20Y1116-01"/>
+        <input type="text" style="width:150px;height:30px;" value="IQC-20Y1116-01"/>
     </div>
     <el-row class="spacing-10" :gutter="20">
       <el-col :span="10">
