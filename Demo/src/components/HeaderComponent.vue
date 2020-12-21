@@ -2,7 +2,7 @@
    <el-row align-center class="header">
     <el-dropdown>
   <el-button size="medium" type="primary">
-    File<i class="el-icon-arrow-down el-icon--right"></i>
+    文件<i class="el-icon-arrow-down el-icon--right"></i>
   </el-button>
   <el-dropdown-menu slot="dropdown">
     <el-dropdown-item icon="el-icon-plus">新建</el-dropdown-item>
@@ -11,7 +11,7 @@
     <el-dropdown-item icon="el-icon-document">另存为</el-dropdown-item>
   </el-dropdown-menu>
 </el-dropdown>
-    <el-button size="medium">View</el-button>
+    <el-button size="medium">浏览</el-button>
      <el-button size="medium">查询</el-button>
       <el-button size="medium">保存</el-button>
        <el-button size="medium" disabled>审批</el-button>

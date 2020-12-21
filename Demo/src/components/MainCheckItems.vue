@@ -1,7 +1,7 @@
 <template>
 <div>
   <el-dialog title="检测曲线图" :visible.sync="showChat">
-  <img style="max-width:100%" src="https://www.bio-equip.com/imgatl/2016/2016070758144440.jpg"/>
+  <img style="max-width:100%;width:100%" src="https://www.bio-equip.com/imgatl/2016/2016070758144440.jpg"/>
   <div slot="footer" class="dialog-footer">
     <el-button @click="showChat = false">取 消</el-button>
     <el-button type="primary" @click="showChat = false">确 定</el-button>
@@ -305,13 +305,7 @@ export default {
         return
       }
       this.$alert("这是备注信息", "备注", {
-        confirmButtonText: "确定",
-        callback: action => {
-          this.$message({
-            type: "info",
-            message: `action: ${action}`
-          })
-        }
+        confirmButtonText: "确定"
       })
     },
     viewChat() {

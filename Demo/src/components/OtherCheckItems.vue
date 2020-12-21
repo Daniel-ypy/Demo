@@ -362,13 +362,7 @@ export default {
         return
       }
       this.$alert("这是备注信息", "备注", {
-        confirmButtonText: "确定",
-        callback: action => {
-          this.$message({
-            type: "info",
-            message: `action: ${action}`
-          })
-        }
+        confirmButtonText: "确定"
       })
     }
   }
