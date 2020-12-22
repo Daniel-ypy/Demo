@@ -1,7 +1,30 @@
 <template>
 <div>
-  <el-dialog title="检测曲线图" :visible.sync="showChat">
-  <img style="max-width:100%" src="https://www.bio-equip.com/imgatl/2016/2016070758144440.jpg"/>
+  <el-dialog title="检测曲线图" :visible.sync="showChat" style="min-height:350px;">
+  <el-card>
+<el-select v-model="value" placeholder="请选择区间" >
+    <el-option
+      v-for="item in filterOptions"
+      :key="item.value"
+      :label="item.label"
+      :value="item.value">
+    </el-option>
+  </el-select>
+  <div style="margin:12px 0">
+    <span class="demonstration">从</span>
+    <el-date-picker
+      type="date"
+      v-model="startDate"
+      placeholder="选择日期">
+    </el-date-picker>
+    <span class="demonstration">到</span>
+    <el-date-picker
+      type="date"
+      v-model="endDate"
+      placeholder="选择日期">
+    </el-date-picker>
+  </div>
+  </el-card>
   <div slot="footer" class="dialog-footer">
     <el-button @click="showChat = false">取 消</el-button>
     <el-button type="primary" @click="showChat = false">确 定</el-button>
@@ -72,7 +95,7 @@
           prop="item5"
           label="5">
           <template slot-scope="scope">
-            <el-input v-model="scope.row.item5"/>
+            <el-input v-if="isShowInput" v-model="scope.row.item5"/>
           </template>
           </el-table-column>
           <el-table-column
@@ -118,6 +141,10 @@ export default {
     product: {
       type: String,
       default: ""
+    },
+    isShowInput: {
+      type: Boolean,
+      default: true
     }
   },
   name: "MainCheckItem",
@@ -125,6 +152,9 @@ export default {
     return {
       showChat: false,
       mainItemsData: [],
+      value: "",
+      endDate: new Date(),
+      startDate: new Date(new Date() - 20 * 24 * 60 * 60 * 1000),
       products: [{
         productName: "22061006.1",
         mainItemsData: [
@@ -240,7 +270,23 @@ export default {
           }
         ]
       }
-      ]
+      ],
+      filterOptions: [{
+        value: "近20个日图表",
+        label: "近20个日图表"
+      }, {
+        value: "近1个月图表",
+        label: "近1个月图表"
+      }, {
+        value: "近3个月图表",
+        label: "近3个月图表"
+      }, {
+        value: "今年内图表",
+        label: "今年内图表"
+      }, {
+        value: "2019年图表",
+        label: "2019年图表"
+      }]
     }
   },
   watch: {
@@ -315,6 +361,10 @@ export default {
       })
     },
     viewChat() {
+      if (this.$route.path === "/chat") {
+        this.showChat = true
+        return
+      }
       this.$router.push("/chat")
     }
   }
@@ -332,5 +382,8 @@ export default {
 }
 .pointer{
   cursor: pointer !important;
+}
+.el-dialog{
+  width: 600px;
 }
 </style>

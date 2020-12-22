@@ -95,7 +95,7 @@
     </el-row>
     </el-card>
     <el-row style="margin-top:20px">
-      <MainCheckItem :product="product"/>
+      <MainCheckItem  :product="product"/>
     </el-row>
     <el-row>
       <OtherCheckItems :product="product"/>
