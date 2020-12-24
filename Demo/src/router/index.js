@@ -5,8 +5,8 @@ Vue.use(VueRouter)
 
 const routes = [
   {
-    path: "/chat",
-    name: "chat",
+    path: "/chart",
+    name: "chart",
     component: () =>
     import(/* webpackChunkName: "about" */ "../views/xrChat.vue")
   },
