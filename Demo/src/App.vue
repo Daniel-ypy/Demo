@@ -7,7 +7,7 @@
     <el-card style="margin-top:-12px">
     <div style="display:flex;justify-content: flex-end; align-items:center">
        <span>单据编号</span>
-        <input type="text" style="width:150px;height:30px;" value="IQC-20Y1116-01"/>
+        <input type="text" style="width:150px;height:30px;border:1px solid rgb(220,223,230)" value="IQC-20Y1116-01"/>
     </div>
     <el-row class="spacing-10" :gutter="20">
       <el-col :span="10">
@@ -22,7 +22,7 @@
     </el-option>
   </el-select>
          <span style="margin-left:8px">品名</span>
-        <input type="text" style="width:160px; height:30px"  v-model="productName"/>
+        <input type="text" style="width:160px; height:30px;border:1px solid rgb(220,223,230)"  v-model="productName"/>
       </div>
       <div style="margin-top:10px">
         <span style="vertical-align: top;">检查周期基准</span>
