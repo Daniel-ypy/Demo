@@ -27,7 +27,7 @@
   </el-card>
   <div slot="footer" class="dialog-footer">
     <el-button @click="showChat = false">取 消</el-button>
-    <el-button type="primary" @click="showChat = false">确 定</el-button>
+    <el-button type="primary" @click="showXRChat()">确 定</el-button>
   </div>
 </el-dialog>
     <el-table
@@ -366,6 +366,10 @@ export default {
         return
       }
       this.$router.push("/chat")
+    },
+    showXRChat() {
+      this.showChat = false
+      this.$store.dispatch("checkItem/showChat")
     }
   }
 }

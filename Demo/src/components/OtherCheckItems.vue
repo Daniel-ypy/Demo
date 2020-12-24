@@ -77,6 +77,7 @@
     </div>
 </template>
 <script>
+
 export default {
   props: {
     product: {
@@ -306,6 +307,7 @@ export default {
       ]
     }
   },
+
   watch: {
     product: function(val, oldValue) {
       if (val !== oldValue) {

@@ -99,6 +99,9 @@
     <el-row style="margin:0px 12px">
       <OtherCheckItems :product="product"/>
     </el-row>
+    <el-row v-if="showChat" style="margin:12px 12px 0 12px">
+      <XRChat/>
+    </el-row>
     <el-row style="margin:12px; ">
       <el-button style="float:right" @click="$router.back(-1)" size="medium">返回</el-button>
     </el-row>
@@ -122,17 +125,21 @@
 import Header from "./../components/HeaderComponent"
 import MainCheckItem from "./../components/MainCheckItems"
 import OtherCheckItems from "./../components/OtherCheckItems"
+import { mapState } from "vuex"
+import XRChat from "./../components/ChatComponent"
 
 export default {
   name: "Chat",
   components: {
     Header,
     MainCheckItem,
-    OtherCheckItems
+    OtherCheckItems,
+    XRChat
   },
   data () {
     return {
       isAddBatch: false,
+      showChat: false,
       formLabelWidth: "80px",
       currentBatch: {},
       form: {
@@ -174,6 +181,15 @@ export default {
           productName: "Helical Gear-H2020-0202"
         }
       ]
+    }
+  },
+  computed: {
+    ...mapState("checkItem", ["isShowChat"])
+  },
+  watch: {
+    isShowChat(newValue) {
+      if (!newValue) return
+      this.showChat = newValue
     }
   },
   methods: {
