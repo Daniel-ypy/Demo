@@ -100,9 +100,6 @@
     <el-row>
       <OtherCheckItems :product="product"/>
     </el-row>
-    <el-row>
-      <XRChat v-if="isShowChat"/>
-    </el-row>
   </el-main>
    <el-dialog width="350px" title="添加纳品批次" :visible.sync="isAddBatch">
   <el-form :model="form">
