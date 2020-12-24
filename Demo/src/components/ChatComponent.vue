@@ -17,31 +17,31 @@ export default {
   data() {
     return {
       chartDataDouble: [
-        { time: "1", data: 5.6555, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "2", data: 5.6065, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "3", data: 5.653, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "4", data: 5.55725, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "5", data: 5.64125, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "6", data: 5.612, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "7", data: 5.68, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "8", data: 5.68, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "9", data: 5.68, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "10", data: 5.68, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "11", data: 5.68, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "12", data: 5.61075, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "13", data: 5.62799, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "14", data: 5.60225, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "15", data: 5.60625, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "16", data: 5.60675, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "17", data: 5.60825, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "18", data: 5.62799, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "19", data: 5.6235, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "20", data: 5.64025, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "21", data: 5.62799, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "22", data: 5.589, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "23", data: 5.61875, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "24", data: 5.5515, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
-        { time: "25", data: 5.60925, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 }
+        { time: "1", DATAx: 5.6555, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "2", DATAx: 5.6065, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "3", DATAx: 5.653, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "4", DATAx: 5.55725, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "5", DATAx: 5.64125, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "6", DATAx: 5.612, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "7", DATAx: 5.68, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "8", DATAx: 5.68, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "9", DATAx: 5.68, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "10", DATAx: 5.68, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "11", DATAx: 5.68, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "12", DATAx: 5.61075, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "13", DATAx: 5.62799, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "14", DATAx: 5.60225, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "15", DATAx: 5.60625, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "16", DATAx: 5.60675, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "17", DATAx: 5.60825, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "18", DATAx: 5.62799, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "19", DATAx: 5.6235, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "20", DATAx: 5.64025, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "21", DATAx: 5.62799, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "22", DATAx: 5.589, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "23", DATAx: 5.61875, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "24", DATAx: 5.5515, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 },
+        { time: "25", DATAx: 5.60925, ucl: 5.68777, lcl: 5.5682, aver: 5.6280 }
 
       ]
     }
@@ -63,7 +63,7 @@ export default {
       // fold 方式完成了行列转换，如果不想使用 DataSet 直接手工转换数据即可 --官方注释
       dv.transform({ // 附transform API https://g2.antv.vision/zh/docs/manual/dataset/transform
         type: "fold",
-        fields: ["data"], // 展开字段集
+        fields: ["DATAx"], // 展开字段集
         key: "type", // key字段
         value: "count" // value字段
       })
@@ -77,7 +77,7 @@ export default {
           range: [0, 1] // 输出数据的范围，默认[ 0, 1 ]，格式为 [ min, max ]，min 和 max 均为 0 至 1 范围的数据 --官方
         }, // 简单来说就是 这个图标的多少用于显示数据[0,1]就是数据占满横坐标宽度,[0,0.5]就是还余下半个空的横坐标
         count: {
-          min: 5.45, // 我的纵坐标count的最小值，不设置的话自动取数据中最小数的作为y=0的起始
+          min: 5.5, // 我的纵坐标count的最小值，不设置的话自动取数据中最小数的作为y=0的起始
           nice: true // 默认为 true，用于优化数值范围，使绘制的坐标轴刻度线均匀分布。例如原始数据的范围为 [3, 97]，如果 nice 为 true，那么就会将数值范围调整为 [0, 100] --官方
         }
       })
@@ -115,7 +115,7 @@ export default {
             fontSize: 12,
             fontWeight: 300
           },
-          content: "上控制线 5.68777",
+          content: "UCLx 5.68777",
           offsetY: -5
         }
       })
@@ -135,7 +135,7 @@ export default {
             fontSize: 12,
             fontWeight: 300
           },
-          content: "下控制线 5.5682",
+          content: "LCLx 5.5682",
           offsetY: -5
         }
       })
@@ -155,7 +155,7 @@ export default {
             fontSize: 12,
             fontWeight: 300
           },
-          content: "平均线 5.6280s",
+          content: "AVGx 5.6280",
           offsetY: -5
         }
       })

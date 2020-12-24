@@ -361,11 +361,11 @@ export default {
       })
     },
     viewChat() {
-      if (this.$route.path === "/chat") {
+      if (this.$route.path === "/chart") {
         this.showChat = true
         return
       }
-      this.$router.push("/chat")
+      this.$router.push("/chart")
     },
     showXRChat() {
       this.showChat = false
