@@ -12,7 +12,7 @@
         <a-space>
           <div>
             品番<a-select
-              v-model:value="value1"
+              :value="productName"
               style="width: 140px"
               ref="select"
               @change="handleChange"
@@ -25,7 +25,7 @@
             ></a-input>
           </div>
         </a-space>
-        <el-space style="display:block;margin-top:12px">
+        <a-space style="display:block;margin-top:12px">
           <span style="vertical-align: top;display:inline-block"
             >检查周期基准</span
           >
@@ -47,7 +47,7 @@
               ，<strong style="color:blue;">B</strong>)
             </div>
           </div>
-        </el-space>
+        </a-space>
       </a-col>
       <a-col :span="6" style="padding:0 24px">
         <a-table
@@ -57,20 +57,59 @@
           size="small"
           :pagination="false"
         >
-          <template #customAction="{ key, record }">
-            <MinusOutlined @click="deleteData(key, record.key)" />
-          </template>
-          <template #customActionTitle="{ }">
+          <template #customActionTitle="{  }">
             <PlusOutlined @click="addData()" />
           </template>
+          <template #customAction="{  record }">
+            <MinusOutlined @click="showConfirm(record)"
+          /></template>
         </a-table>
       </a-col>
-      <a-col :span="7">7</a-col>
+      <a-col :span="7"
+        ><a-table
+          :columns="checkColumns"
+          :data-source="checkData"
+          bordered
+          size="small"
+          :pagination="false"
+        >
+        </a-table
+      ></a-col>
     </a-row>
+    <a-modal
+      title="添加批次"
+      v-model:visible="isShowAddBatchDialog"
+      @ok="addBatchItem()"
+    >
+      <div>
+        <a-space :size="12">
+          <a-input
+            style="width:150px"
+            placeholder="纳品批号"
+            v-model:value="batchNumber"
+          ></a-input>
+          <a-input
+            style="width:150px"
+            placeholder="纳品数"
+            v-model:value="batchCount"
+          ></a-input>
+        </a-space>
+      </div>
+    </a-modal>
+    <a-modal
+      v-model:visible="isShowConfirm"
+      title="Modal"
+      ok-text="确认"
+      cancel-text="取消"
+      @ok="deleteData(record)"
+    >
+      {{ constants.confirmDeleteBatchItem }}
+    </a-modal>
   </a-card>
 </template>
 <script>
 import { PlusOutlined, MinusOutlined } from "@ant-design/icons-vue";
+import { Constants } from "./../common/constants.ts";
 export default {
   name: "MainItem",
   components: {
@@ -80,6 +119,13 @@ export default {
   data() {
     return {
       orderNumber: "IQC-20Y1116-01",
+      constants: Constants,
+      isShowAddBatchDialog: false,
+      isShowConfirm: false,
+      batchNumber: "",
+      productName: "",
+      batchCount: undefined,
+      currentBatch: undefined,
       batchData: [
         {
           key: "0",
@@ -92,6 +138,26 @@ export default {
           batchCount: 1600
         }
       ],
+      checkData: [
+        { key: "0", checker: "喜洋洋", reviewer: "美洋洋", confirm: "灰太狼" }
+      ],
+      checkColumns: [
+        {
+          title: "检查者",
+          dataIndex: "checker",
+          align: "center"
+        },
+        {
+          title: "检讨者",
+          dataIndex: "reviewer",
+          align: "center"
+        },
+        {
+          title: "承认者",
+          dataIndex: "confirm",
+          align: "center"
+        }
+      ],
       columns: [
         {
           title: "纳品批号",
@@ -102,10 +168,12 @@ export default {
           dataIndex: "batchCount"
         },
         {
-          title: { customRender: "customActionTion" },
           dataIndex: "key",
           key: "x",
-          slots: { customRender: "customAction", title: "customActionTitle" }
+          slots: {
+            customRender: "customAction",
+            title: "customActionTitle"
+          }
         }
       ]
     };
@@ -113,6 +181,27 @@ export default {
   methods: {
     handleChange() {
       alert("123");
+    },
+    addData() {
+      this.isShowAddBatchDialog = true;
+    },
+    addBatchItem() {
+      this.batchData.push({
+        key: this.batchData.length | "0",
+        batchNumber: this.batchNumber,
+        batchCount: this.batchCount
+      });
+      this.batchCount = undefined;
+      this.batchNumber = "";
+      this.isShowAddBatchDialog = false;
+    },
+    deleteData() {
+      this.batchData.splice(this.batchData.indexOf(this.currentBatch), 1);
+      this.isShowConfirm = false;
+    },
+    showConfirm(item) {
+      this.isShowConfirm = true;
+      this.currentBatch = item;
     }
   }
 };
