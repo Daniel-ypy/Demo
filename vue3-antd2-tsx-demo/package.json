@@ -5,15 +5,21 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-dev": "vue-cli-service build --mode dev",
+    "build-publish": "vue-cli-service build && vue-cli-service build --mode production",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@ant-design/icons": "^4.3.0",
+    "@ant-design/icons-vue": "^5.1.8",
     "ant-design-vue": "^2.0.0-rc.7",
     "core-js": "^3.6.5",
     "fibers": "^5.0.0",
-    "vue": "^3.0.0",
+    "run": "^1.4.0",
+    "serve": "^11.3.2",
+    "vue": "^3.0.5",
     "vue-class-component": "^8.0.0-0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"

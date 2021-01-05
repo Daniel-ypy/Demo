@@ -1,7 +1,9 @@
 import { defineComponent, ref } from "vue";
+import { StarTwoTone } from "@ant-design/icons-vue";
 
 export default defineComponent({
   name: "App",
+  components: { StarTwoTone },
   props: {
     msg: {
       type: String,
@@ -10,20 +12,18 @@ export default defineComponent({
   },
   setup(prop) {
     const count = ref(0);
+    const increase = () => {
+      count.value++;
+    };
     return () => (
       <>
         <h1>{prop.msg}</h1>
-        <button
-          onClick={() => {
-            count.value++;
-          }}
-        >
-          count is: {count.value}
-        </button>
+        <button onClick={increase}>count is: {count.value}</button>
         <p>
           Edit <code>components/HelloWorld.vue</code> to test hot module
           replacement.
         </p>
+        <StarTwoTone twoToneColor="#eb2f96" />
         <div class="hello">
           <h1>{prop.msg}</h1>
           <p>

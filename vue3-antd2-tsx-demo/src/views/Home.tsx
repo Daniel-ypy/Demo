@@ -10,7 +10,9 @@ export default defineComponent({
       <>
         <div class="home">
           <img alt="Vue logo" src="../assets/logo.png" />
-          <a-button type="primary">test</a-button>
+          <a-button onClick={() => alert("test")} type="primary">
+            test
+          </a-button>
           <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
           <h1>{store.state.title}</h1>
         </div>
