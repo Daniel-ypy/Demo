@@ -9,12 +9,13 @@ import {
   Row,
   Col,
   Spin,
-  Button
+  Button,
+  Card
 } from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.less';
 
 export function ant(app: App<Element>) {
   // need
   // Here are the components required before registering and logging in
-  app.use(Form).use(Input).use(Row).use(Col).use(Spin).use(Button);
+  app.use(Form).use(Input).use(Row).use(Col).use(Spin).use(Button).use(Card);
 }
