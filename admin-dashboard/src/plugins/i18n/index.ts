@@ -2,7 +2,6 @@ import { getI18n } from "../../../src/lang/index";
 
 export function useI18n(namespace?: string) {
   function getKey(key: string) {
-    debugger;
     if (!namespace) {
       return key;
     }

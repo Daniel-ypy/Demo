@@ -1,4 +1,4 @@
-import { sys } from "../en/sys";
+import { sys } from "../zh/sys";
 import { exception } from "./exception";
 
 export default {

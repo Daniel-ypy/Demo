@@ -3,7 +3,7 @@
     <a-card hoverable style="width: 240px">
       <a-card-meta title="Europe Street beat">
         <template #description>
-          www.instagram.com
+          {{ t("sys.userName") }}
         </template>
       </a-card-meta>
     </a-card>
