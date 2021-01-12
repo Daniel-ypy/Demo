@@ -36,6 +36,7 @@
 import { defineComponent, ref, reactive, unref, toRaw } from "vue";
 import { useI18n } from "../../plugins/i18n";
 import { userStore } from "../../store/modules/user";
+import router from "../../router";
 
 export default defineComponent({
   name: "login",
@@ -86,6 +87,7 @@ export default defineComponent({
           })
         );
         console.log(userInfo);
+        await router.replace("/");
       } catch (error) {
         formState.loading = false;
       } finally {
