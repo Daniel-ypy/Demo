@@ -10,12 +10,14 @@ import {
   Col,
   Spin,
   Button,
-  Card
+  Card,
+  ConfigProvider,
+  DatePicker
 } from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.less';
 
 export function ant(app: App<Element>) {
   // need
   // Here are the components required before registering and logging in
-  app.use(Form).use(Input).use(Row).use(Col).use(Spin).use(Button).use(Card);
+  app.use(Form).use(Input).use(Row).use(Col).use(Spin).use(Button).use(Card).use(ConfigProvider).use(DatePicker);
 }
