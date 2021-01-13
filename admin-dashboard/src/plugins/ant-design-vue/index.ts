@@ -15,6 +15,8 @@ import {
   DatePicker,
   Layout,
   Menu,
+  Avatar,
+  Dropdown
 } from 'ant-design-vue';
 import 'ant-design-vue/dist/antd.less';
 
@@ -32,5 +34,7 @@ export function ant(app: App<Element>) {
   .use(ConfigProvider)
   .use(DatePicker)
   .use(Layout)
-  .use(Menu);
+  .use(Menu)
+  .use(Avatar)
+  .use(Dropdown);
 }
