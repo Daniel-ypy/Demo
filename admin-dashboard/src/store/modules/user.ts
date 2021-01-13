@@ -23,6 +23,7 @@ class User extends VuexModule {
   @Mutation
   updateToken(token: string) {
     this.token = token;
+    localStorage.setItem("token", token);
   }
 
   @Action({ commit: "updateToken" })
